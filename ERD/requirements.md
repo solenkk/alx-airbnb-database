@@ -80,5 +80,8 @@
 ## 🎯 Next Steps
 1. Implement this schema in `schema.sql`  
 2. Create sample data in `seed_data.sql`  
-3. Generate ER diagram (`airbnb_erd.png`)  
+3. Generate ER diagram (`airbnb_erd.png`)
+
+![Untitled](https://github.com/user-attachments/assets/9c412320-66a9-41b8-8e5a-12b2c77842f0)
+
 
