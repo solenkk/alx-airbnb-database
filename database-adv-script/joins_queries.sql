@@ -10,10 +10,10 @@ the user and the payment they made that is what inner join is so
   FROM users
   INNER JOIN users ON booking_id=users.booking_id;
 
---the query for Left join 
-SELECT users.user_id, bookings.booking_id
-FROM users
-LEFT JOIN users ON booking_id=users.booking_id;
+--The query for Left join 
+SELECT Customers.name, Orders.order_date
+FROM Customers
+LEFT JOIN Orders ON Customers.id = Orders.customer_id;
 
 --THE query for full outer join 
 SELECT users.user_id, bookings.booking_id
