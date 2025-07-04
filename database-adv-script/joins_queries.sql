@@ -10,7 +10,7 @@ the user and the payment they made that is what inner join is so
   FROM users
   INNER JOIN users ON booking_id=users.booking_id;
 
---the query for left join 
+--the query for Left join 
 SELECT users.user_id, bookings.booking_id
 FROM users
 LEFT JOIN users ON booking_id=users.booking_id;
