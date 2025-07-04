@@ -11,9 +11,22 @@ the user and the payment they made that is what inner join is so
   INNER JOIN users ON booking_id=users.booking_id;
 
 --The query for Left join 
-SELECT Customers.name, Orders.order_date
-FROM Customers
-LEFT JOIN Orders ON Customers.id = Orders.customer_id;
+SELECT 
+    p.property_id,
+    p.title AS property_title,
+    p.property_type,
+    p.city,
+    p.price_per_night,
+    COUNT(r.review_id) AS review_count,
+    AVG(r.rating) AS average_rating
+FROM 
+    properties p
+LEFT JOIN 
+    reviews r ON p.property_id = r.property_id
+GROUP BY 
+    p.property_id, p.title, p.property_type, p.city, p.price_per_night
+ORDER BY 
+    p.property_id;
 
 --THE query for full outer join 
 SELECT users.user_id, bookings.booking_id
