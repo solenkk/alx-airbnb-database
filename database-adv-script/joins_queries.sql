@@ -14,6 +14,7 @@ the user and the payment they made that is what inner join is so
 SELECT users.user_id, bookings.booking_id
 FROM users
 LEFT JOIN users ON booking_id=users.booking_id;
+
 --THE query for full outer join 
 SELECT users.user_id, bookings.booking_id
 FROM users
