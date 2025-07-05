@@ -15,3 +15,7 @@ CREATE INDEX idx_users_email ON users(email);
 CREATE INDEX p_rp ON property(property_id);
 CREATE INDEX nk ON booking(total_price);
 CREATE INDEX pyt ON payment(amount);
+
+EXPLAIN ANALYZE 
+SELECT * FROM property 
+where property_id < 999;
