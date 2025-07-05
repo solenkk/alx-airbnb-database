@@ -1,24 +1,9 @@
 -- performance.sql
+EXPLAIN ANALYZE
 SELECT 
     b.booking_id,
     b.start_date,
-    b.end_date,
-    b.total_price,
-    b.status,
-    u.user_id,
-    u.first_name,
-    u.last_name,
-    u.email,
-    p.property_id,
-    p.name AS property_name,
-    p.city,
-    p.country,
-    p.price_per_night,
-    pt.name AS property_type,
-    pay.payment_id,
-    pay.amount,
-    pay.payment_date,
-    pay.payment_method
+
 FROM 
     Booking b
 JOIN 
@@ -31,6 +16,13 @@ LEFT JOIN
     Payment pay ON b.booking_id = pay.booking_id
 ORDER BY 
     b.start_date DESC;
+-- Indexes for join 
+CREATE INDEX idx_booking_user_id ON Booking(user_id);
+CREATE INDEX idx_booking_property_id ON Booking(property_id);
+CREATE INDEX idx_property_type_id ON Property(type_id);
+CREATE INDEX idx_payment_booking_id ON Payment(booking_id);
 
+-- Index 
+CREATE INDEX idx_booking_start_date ON Booking(start_date DESC);
     ANALYZE EXPLAIN 
     SELECT * FROM BOOKING;
