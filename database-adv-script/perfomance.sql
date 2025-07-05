@@ -31,3 +31,6 @@ LEFT JOIN
     Payment pay ON b.booking_id = pay.booking_id
 ORDER BY 
     b.start_date DESC;
+
+    ANALYZE EXPLAIN 
+    SELECT * FROM BOOKING;
